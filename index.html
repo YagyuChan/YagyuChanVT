@@ -2,170 +2,288 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opening Soon - Yagyu Chan</title>
+    <title>Home - Yagyu Chan</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #1a0202;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            overflow-x: hidden;
-        }
-        header {
-            width: 100%;
-            padding: 20px 0;
-            display: flex;
-            justify-content: center;
-        }
-        .logo {
-            display: inline-block;
-        }
-        .logo img {
-            height: 70px; /* Increased size of the image-based logo */
-            width: auto;
-        }
-        main {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            padding: 10px 20px;
-            width: 100%;
-            max-width: 1400px;
-            box-sizing: border-box;
-        }
-        .center-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex-shrink: 0;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 5px;
-            color: #ff4d4d;
-            letter-spacing: 2px;
-        }
-        .jp-title {
-            font-size: 1.4rem;
-            color: #ff8080;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-        p {
-            color: #b0b0b0;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-        .jp-desc {
-            color: #888888;
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-        }
-        .countdown {
-            display: flex;
-            gap: 15px;
+        
+        .schedule-countdown {
+            margin: 15px auto;
+            display: inline-flex;
+            gap: 10px;
             background: rgba(30, 0, 0, 0.6);
-            padding: 20px 30px;
-            border-radius: 10px;
-            border: 2px solid #5a0000;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #5a0000;
         }
-        .time-box {
-            font-size: 0.8rem;
+        .schedule-time-box {
+            font-size: 0.75rem;
             color: #888;
             text-transform: uppercase;
         }
-        .time-box span {
+        .schedule-time-box span {
             display: block;
-            font-size: 2.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: #ffffff;
-        }
-        .maint-img {
-            max-height: 350px;
-            width: auto;
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-        footer {
-            width: 100%;
-            padding: 20px;
-            font-size: 0.875rem;
-            color: #888;
-            border-top: 1px solid #3a0000;
-            background-color: rgba(18, 3, 3, 0.9);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo"><img src="Yagyu Chan.png" alt="Yagyu Chan Logo"></a>
-    </header>
+<header>
+    <nav class="nav-left">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li class="dropdown">
+                <a href="#">PROJECTS</a>
+                <ul class="dropdown-content">
+                    <li><a href="https://yagyuchan.github.io/FightForFreedom/">Fight For Freedom</a></li>
+                    <li><a href="models.html">Model Gallery</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
-    <main>
-        <img src="yagyu maint.png" alt="Left Character" class="maint-img">
+    <div class="branding">
+        <a href="index.html" class="logo"><img src="Yagyu Chan.png" alt="Logo"></a>
+        <div class="mascot-img"></div>
+    </div>
 
-        <div class="center-content">
-            <h1>COMING SOON</h1>
-            <div class="jp-title">近日公開</div>
+    <nav class="nav-right">
+        <ul>
+            <li><a href="maintenance.html">OPEN SOON</a></li>
+            <li><a href="https://calendar.google.com/calendar/u/0/embed?src=902b26a04947ad3a99c00103e57371efa73a3282f217838b615a7cbea26bfd91@group.calendar.google.com&ctz=Europe/London&pli=1">SCHEDULE</a></li>
             
-            <p>We are working hard behind the scenes. Stay tuned for the grand opening!</p>
-            <div class="jp-desc">裏で鋭意制作中です。オープンをお楽しみに！</div>
+            <li class="dropdown">
+                <a href="#">EN ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="index.html">English</a></li>
+                    <li><a href="jp/index.html">日本語</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
 
-            <div class="countdown" id="countdown">
-                <div class="time-box"><span id="days">00</span>Days</div>
-                <div class="time-box"><span id="hours">00</span>Hours</div>
-                <div class="time-box"><span id="minutes">00</span>Minutes</div>
-                <div class="time-box"><span id="seconds">00</span>Seconds</div>
+<section class="personalities">
+    <h2 style="text-align: center;">CHECK OUT THE MAIN AND SIDE MODELS!</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="Yagyu.png" alt="Yagyu Chan">
+            <h3>YAGYUU CHAN</h3>
+            <p>THE VAIN MAIN MODEL</p>
+            <div class="hidden-details" style="display:none;">
+                <p>Japanese Name: 柳生 チャン</p>
+				<p>Birthday: August 27th</p>
+				<p>Personality: Serious and relaxed</p>
+				<p>Likes: The thrill of play and chat</p>
+				<p>Dislikes: Dishonesty</p>
+				<p>Serious and a main face alongside Momo and Hibari. Danger walks every corner with her around.</p>
             </div>
         </div>
+        <div class="card">
+            <img src="Momo.png" alt="Momo Lunamei">
+            <h3>MOMO LUNAMEI</h3>
+            <p>THE SHY MAIN MODEL</p>
+            <div class="hidden-details" style="display:none;">
+                <p>Japanese Name: モモ・ルナメイ</p>
+				<p>Birthday: December 15th</p>
+				<p>Personality: Shy but hard working</p>
+				<p>Likes: Victory and being adored</p>
+				<p>Dislikes: Being shy and anger</p>
+				<p>Shy and deadly! Her anger is to never be seen otherwise it can have destructive effects.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Rin.png" alt="Rin Yomikaze">
+            <h3>RIN YOMIKAZE</h3>
+            <p>THE SMUG MAIN MODEL</p>
+            <div class="hidden-details" style="display:none;">
+                <p>Japanese Name: リン・ヨミカズ</p>
+				<p>Birthday: June 18th</p>
+				<p>Personality: Smug and self-absorbed</p>
+				<p>Likes: Her looks and fans</p>
+				<p>Dislikes: Being outshined</p>
+				<p>A materialistic and smug lady that hopes to one day become an idol and have fans of her own. Also a serving member of the Discord Server security squad Smug 4CE (Smug Force) alongside Raia Aegis.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Killjoy.png" alt="Killjoy Naitomea">
+            <h3>KILLJOY NAITOMEA</h3>
+            <p>THE TOUGH SIDE MODEL</p>
+            <div class="hidden-details" style="display:none;">
+                <p>Japanese Name: キルジョイ・ナイトメア</p>
+				<p>Birthday: April 21st</p>
+				<p>Personality: Angry and persistent</p>
+				<p>Likes: Victory and being adored</p>
+				<p>Dislikes: Cowardice</p>
+				<p>Born in the art of war and raised by constant trials in her life she knows what it takes to win.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Hibari.png" alt="Hibari Chan">
+            <h3>HIBARI CHAN</h3>
+            <p>THE SCARY MAIN MODEL</p>
+            <div class="hidden-details" style="display:none;">
+                <p>Japanese Name: ひばり・チャン</p>
+				<p>Birthday: October 2nd</p>
+				<p>Personality: Unpredictable</p>
+				<p>Likes: Chasing and eating Crickets</p>
+				<p>Dislikes: losing</p>
+				<p>Hibariphobia is not real... it can't be no it is too late Hibari is here and now all are scared!</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Linessa.png" alt="Linessa Altera">
+            <h3>LINESSA ALTERA</h3>
+            <p>THE SERIOUS SIDE MODEL</p>
+            <div class="hidden-details" style="display:none;">
+                <p>Japanese Name: リネッサ・アルテラ</p>
+				<p>Birthday: November 12th</p>
+				<p>Personality: Loner and aggressive</p>
+				<p>Likes: Sweets/Candy and Independence</p>
+				<p>Dislikes: Teamwork</p>
+				<p>Linessa enjoys hunting down rare opportunities but has a lot of trouble communicating them to others.</p>
+            </div>
+        </div>
+		        <div class="card">
+            <img src="Raia.png" alt="Raia Aegis">
+            <h3>RAIA AEGIS</h3>
+            <p>THE PROTECTIVE SIDE MODEL</p>
+            <div class="hidden-details" style="display:none;">
+                <p>Japanese Name: ライア・イージス</p>
+				<p>Birthday: May 20th</p>
+				<p>Personality: Protective and Weapon obsessed</p>
+				<p>Likes: Weapons and protecting people</p>
+				<p>Dislikes: Being Outsmarted</p>
+				<p>Raia is themed after the RaidProtect bot in my server and is one of the serving members of Smug Force alongside Rin Yomikaze.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <img src="momo maint.png" alt="Right Character" class="maint-img">
-    </main>
+<section id="about" style="padding: 40px; background: #2a0000; text-align: center; border-top: 2px solid #5d0707;">
+    <h2>ABOUT YAGYU CHAN</h2>
+    <p style="max-width: 800px; margin: 0 auto 20px auto; line-height: 1.6;">
+        Welcome to the hub! I am a VTuber focused on creative content, gaming, and 
+        building a community. This site acts as a central repository for all my 
+        projects, models, and patch notes.
+    </p>
 
-    <footer>
-        <p>&copy; 2026 Yagyu Chan & Yagyu Chan Games</p>
-    </footer>
+    <h3 style="color: #ff4444;">STREAM SCHEDULE</h3>
+    <p>Catch me live on Twitch, YouTube and Kick!</p>
+    <ul style="list-style: none; padding: 0;">
+        <li><strong>Wednesday:</strong> 2:00 PM GMT - Regular Stream</li>
+    </ul>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Target: August 27, 2026 at 16:00:00 UTC
-            const launchDate = Date.UTC(2026, 7, 27, 15, 0, 0);
+    
+    <div class="schedule-countdown" id="streamCountdown">
+        <div class="schedule-time-box"><span id="s-days">00</span>Days</div>
+        <div class="schedule-time-box"><span id="s-hours">00</span>Hours</div>
+        <div class="schedule-time-box"><span id="s-minutes">00</span>Minutes</div>
+        <div class="schedule-time-box"><span id="s-seconds">00</span>Seconds</div>
+    </div>
 
-            function updateCountdown() {
-                const now = Date.now();
-                const distance = launchDate - now;
+    <p style="margin-top: 15px;"><em>Dates/Times are subject to change! Check the Schedule for updates!</em></p>
+</section>
 
-                if (distance < 0) {
-                    clearInterval(timer);
-                    document.getElementById("countdown").innerHTML = "<h2>We are live!</h2>";
-                    return;
-                }
+<footer>
+    <div>
+        <h3>IMPORTANT LINKS</h3>
+        <p>
+            <a href="https://www.youtube.com/@YagyuChanVT">YouTube Channel</a><br>
+            <a href="https://www.twitch.tv/yagyuchanvt">Twitch Channel</a><br>
+            <a href="https://kick.com/yagyuchanvt">Kick Channel</a><br>
+			<a href="https://x.com/YagyuChanVT">X</a><br>
+			<a href="https://discord.gg/vSHW7xh">Discord</a><br>
+        </p>
+		
+		<p> &copy; 2026 Yagyu Chan & Yagyu Chan Games </p>
+    </div>
+</footer>
 
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+<div id="characterModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <div id="modalExtra"></div>
+    </div>
+</div>
 
-                document.getElementById("days").innerText = String(days).padStart(2, '0');
-                document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-                document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-                document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+<script>
+    
+    const modal = document.getElementById("characterModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalExtra = document.getElementById("modalExtra");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".card").forEach(card => {
+        card.addEventListener("click", () => {
+            modalTitle.innerText = card.querySelector("h3").innerText;
+            modalDesc.innerText = card.querySelector("p").innerText;
+            const extra = card.querySelector(".hidden-details");
+            modalExtra.innerHTML = extra ? extra.innerHTML : "";
+            modal.style.display = "block";
+        });
+    });
+
+    closeBtn.onclick = () => modal.style.display = "none";
+    window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; }
+
+    
+    function getNextStreamTime(targetDayOfWeek, targetHour, targetMinute) {
+        const now = new Date();
+        const result = new Date(Date.UTC(
+            now.getUTCFullYear(),
+            now.getUTCMonth(),
+            now.getUTCDate(),
+            targetHour,
+            targetMinute,
+            0, 0
+        ));
+
+        let dayOfWeek = result.getUTCDay();
+        let daysUntil = (targetDayOfWeek - dayOfWeek + 7) % 7;
+
+        
+        if (daysUntil === 0 && now.getTime() >= result.getTime()) {
+            daysUntil = 7;
+        }
+
+        result.setUTCDate(result.getUTCDate() + daysUntil);
+        return result.getTime();
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        const nextStream = getNextStreamTime(3, 14, 0);
+
+        function updateStreamCountdown() {
+            const now = Date.now();
+            const distance = nextStream - now;
+
+            if (distance < 0) {
+                document.getElementById("streamCountdown").innerHTML = "<h3 style='color: #ff4d4d; margin: 0;'>STREAM IS LIVE!</h3>";
+                return;
             }
 
-            updateCountdown();
-            const timer = setInterval(updateCountdown, 1000);
-        });
-    </script>
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("s-days").innerText = String(days).padStart(2, '0');
+            document.getElementById("s-hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("s-minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("s-seconds").innerText = String(seconds).padStart(2, '0');
+        }
+
+        updateStreamCountdown();
+        setInterval(updateStreamCountdown, 1000);
+    });
+</script>
+
 </body>
 </html>

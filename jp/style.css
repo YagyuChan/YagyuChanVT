@@ -1,0 +1,120 @@
+/* --- Base Site Styles --- */
+body { background-color: #1a0505; color: white; font-family: sans-serif; margin: 0; }
+
+/* --- Fixed 3-Column Header (Grid) --- */
+header {
+    background-color: #5d0707;
+    padding: 10px 40px;
+    display: grid;
+    grid-template-columns: minmax(auto, 1fr) auto minmax(auto, 1fr); 
+    align-items: center;
+    height: 120px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-left { display: flex; justify-content: flex-start; }
+.nav-right { display: flex; justify-content: flex-end; }
+
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 30px;
+}
+
+.mascot-img {
+    width: 80px; height: 80px;
+    background-image: url('mascot.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo img { height: 70px; width: auto; }
+
+/* --- Navigation & Dropdown --- */
+nav ul { list-style: none; display: flex; gap: 40px; margin: 0; padding: 0; white-space: nowrap; }
+nav a { color: white; text-decoration: none; font-weight: bold; font-size: 0.95em; }
+
+.dropdown { position: relative; cursor: pointer; }
+.dropdown-content { 
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    background-color: #5d0707; 
+    padding: 10px; 
+    list-style: none;
+    min-width: 150px;
+    z-index: 1000;
+    border-radius: 0 0 8px 8px;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease; 
+}
+.dropdown:hover .dropdown-content { 
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* --- Streamer/Model Cards --- */
+.personalities { text-align: center; padding: 40px; }
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px)); 
+    gap: 30px; 
+    justify-content: center; 
+    margin-top: 30px; 
+}
+.card { 
+    background: #2a0000; padding: 20px; border: 1px solid #5d0707; 
+    border-radius: 12px; cursor: pointer; transition: transform 0.3s;
+    text-align: center;
+}
+.card:hover { border-color: #ff4444; transform: translateY(-5px); }
+.card img { 
+    width: 100%; height: 250px; object-fit: cover; object-position: top;
+    border-radius: 8px; background-color: #1a0505; display: block; margin-bottom: 15px; 
+}
+
+/* --- Modal Styles --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+.modal-content {
+    background-color: #2a0000;
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #5d0707;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 12px;
+    position: relative;
+    color: white;
+}
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ff4444;
+}
+
+/* --- Footer Styles --- */
+footer { padding: 40px; border-top: 1px solid #444; text-align: center; }
+footer a { color: white; text-decoration: none; }

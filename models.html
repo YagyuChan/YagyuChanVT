@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Gallery - Yagyu Chan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="nav-left">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li class="dropdown">
+                <a href="#">PROJECTS</a>
+                <ul class="dropdown-content">
+                    <li><a href="https://yagyuchan.github.io/FightForFreedom/">Fight For Freedom</a></li>
+                    <li><a href="models.html">Model Gallery</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="branding">
+        <a href="index.html" class="logo"><img src="Yagyu Chan.png" alt="Logo"></a>
+        <div class="mascot-img"></div>
+    </div>
+
+    <nav class="nav-right">
+        <ul>
+            <li><a href="maintenance.html">OPEN SOON</a></li>
+            <li><a href="https://calendar.google.com/calendar/u/0/embed?src=902b26a04947ad3a99c00103e57371efa73a3282f217838b615a7cbea26bfd91@group.calendar.google.com&ctz=Europe/London&pli=1">SCHEDULE</a></li>
+            <li class="dropdown">
+                <a href="#">EN ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="models.html">English</a></li>
+                    <li><a href="jp/models.html">日本語</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<section class="personalities">
+    <h2>MODEL GALLERY</h2>
+    <div class="grid">
+        <div class="card" onclick="openModal('yagyuu')">
+            <img src="Yagyu.png" alt="Yagyu Chan">
+            <h3>YAGYUU CHAN</h3>
+        </div>
+        <div class="card" onclick="openModal('momo')">
+            <img src="Momo.png" alt="Momo Lunamei">
+            <h3>MOMO LUNAMEI</h3>
+        </div>
+        <div class="card" onclick="openModal('rin')">
+            <img src="Rin.png" alt="Rin Yomikaze">
+            <h3>RIN YOMIKAZE</h3>
+        </div>
+        <div class="card" onclick="openModal('killjoy')">
+            <img src="Killjoy.png" alt="Killjoy Naitomea">
+            <h3>KILLJOY NAITOMEA</h3>
+        </div>
+        <div class="card" onclick="openModal('hibari')">
+            <img src="Hibari.png" alt="Hibari Chan">
+            <h3>HIBARI CHAN</h3>
+        </div>
+        <div class="card" onclick="openModal('linessa')">
+            <img src="Linessa.png" alt="Linessa Altera">
+            <h3>LINESSA ALTERA</h3>
+        </div>
+		<div class="card" onclick="openModal('raia')">
+            <img src="Raia.png" alt="Raia Aegis">
+            <h3>RAIA AEGIS</h3>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div>
+        <h3>IMPORTANT LINKS</h3>
+        <p>
+            <a href="https://www.youtube.com/@YagyuChanVT">YouTube Channel</a><br>
+            <a href="https://www.twitch.tv/yagyuchanvt">Twitch Channel</a><br>
+            <a href="https://kick.com/yagyuchanvt">Kick Channel</a><br>
+			<a href="https://x.com/YagyuChanVT">X</a><br>
+			<a href="https://discord.gg/vSHW7xh">Discord</a><br>
+        </p>
+		<p> 2026 Yagyu Chan & Yagyu Chan Games </p>
+    </div>
+</footer>
+
+<div id="characterModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        
+        <div class="gallery-container">
+            <img id="outfitDisplay" src="" alt="Outfit">
+        </div>
+        
+        <p id="outfitName" style="text-align: center; font-weight: bold;"></p>
+        
+        <div class="modal-nav">
+            <button id="prevBtn">Prev</button>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    const allModels = {
+        yagyuu: [
+            { name: "Default Outfit", src: "models/yagyuu/yagyuu_default.png" },
+        ],
+        momo: [
+            { name: "Default Outfit", src: "models/momo/momo_default.png" }
+        ],
+        rin: [
+            { name: "Default Outfit", src: "models/rin/rin_default.png" }
+        ],
+        killjoy: [
+            { name: "Default Outfit", src: "models/killjoy/killjoy_default.png" }
+        ],
+        hibari: [
+            { name: "Default Outfit", src: "models/hibari/hibari_default.png" }
+        ],
+        linessa: [
+            { name: "Default Outfit", src: "models/linessa/linessa_default.png" }
+        ],
+		raia: [
+            { name: "Default Outfit", src: "models/raia/raia_default.png" }
+        ]
+    };
+
+    let currentOutfitData = [];
+    let currentIndex = 0;
+    const modal = document.getElementById("characterModal");
+    const outfitImg = document.getElementById("outfitDisplay");
+    const outfitText = document.getElementById("outfitName");
+
+    function openModal(modelKey) {
+        currentOutfitData = allModels[modelKey];
+        document.getElementById("modalTitle").innerText = modelKey.toUpperCase();
+        currentIndex = 0;
+        updateDisplay();
+        modal.style.display = "block";
+    }
+
+    function updateDisplay() {
+        outfitImg.src = currentOutfitData[currentIndex].src;
+        outfitText.innerText = currentOutfitData[currentIndex].name;
+    }
+
+    document.getElementById("nextBtn").onclick = () => {
+        currentIndex = (currentIndex + 1) % currentOutfitData.length;
+        updateDisplay();
+    };
+
+    document.getElementById("prevBtn").onclick = () => {
+        currentIndex = (currentIndex - 1 + currentOutfitData.length) % currentOutfitData.length;
+        updateDisplay();
+    };
+
+    document.querySelector(".close").onclick = () => modal.style.display = "none";
+    window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; }
+</script>
+</body>
+</html>
